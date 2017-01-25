@@ -1,3 +1,23 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <h1>Property Stress Test</h1>
+  <p>This stress test is provided as a rough guide only. You should not base any decisions solely on it.</p>
+  <p>It is currently a work in progress.</p>
+  <table *ngIf="properties.length" class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Current Monthly</th>
+      <th>Full Monthly</th>
+      <th class="text-warning">Difference Monthly</th>
+    </tr>
+    <tr app-property *ngFor="let property of properties" [property]="property"></tr>
+    <tr>
+      <th>Total</th>
+      <td>{{getPropertyCurrentTotal() | currency:'GBP':true}}</td>
+      <td>{{getPropertyFullTotal() | currency:'GBP':true}}</td>
+      <td  class="text-warning">{{getPropertyFullTotal() - getPropertyCurrentTotal() | currency:'GBP':true}}</td>
+    </tr>
+  </table>
+  <hr/>
+  <h4>Add a property</h4>
+  <app-new-property></app-new-property>
+</div>
