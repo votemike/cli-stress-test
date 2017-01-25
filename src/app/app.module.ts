@@ -4,17 +4,24 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { NewPropertyComponent } from './new-property/new-property.component';
+import {PropertyService} from './property.service';
+import { PropertySummaryComponent } from './property-summary/property-summary.component';
+import { PropertyBlurbComponent } from './property-blurb/property-blurb.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    NewPropertyComponent,
+    AppComponent,
+    PropertySummaryComponent,
+    PropertyBlurbComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [PropertyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

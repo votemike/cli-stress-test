@@ -1,3 +1,14 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <h1>{{title}}</h1>
+  <p>This stress test is provided as a rough guide only. You should not base any decisions solely on it.</p>
+  <p>It is currently a work in progress.</p>
+  <div *ngIf="properties.length">
+    <div *ngFor="let property of properties">
+      <app-property-blurb [property]="property"></app-property-blurb>
+    </div>
+  </div>
+  <app-property-summary *ngIf="properties.length" [properties]="properties"></app-property-summary>
+  <hr/>
+  <h4>Add a property</h4>
+  <app-new-property></app-new-property>
+</div>

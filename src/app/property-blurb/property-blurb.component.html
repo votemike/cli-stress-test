@@ -1,0 +1,13 @@
+<h2>{{ property.name }}</h2>
+<p *ngIf="property.teaserRate">
+  The mortgage for {{property.name}} currently costs around {{property.getCurrentMonthlyCost() | currency:'GBP':true}} each month. When the teaser rate expires, it is expected that this will rise to {{property.getFullMonthlyCost() | currency:'GBP':true}}, {{property.getFullMonthlyCost() - property.getCurrentMonthlyCost() | currency:'GBP':true}} more than your current repayments.<br/>
+  After mortgage repayments, your current income from the property is around {{property.getCurrentNetIncome() | currency:'GBP':true}} each month. When the teaser rate expires that will be nearer to {{property.getNetIncome(property.baseRate) | currency:'GBP':true}}.
+</p>
+<p *ngIf="!property.teaserRate">
+  The mortgage for {{property.name}} currently costs around {{property.getCurrentMonthlyCost() | currency:'GBP':true}} each month.<br/>
+  After mortgage repayments, your income from the property is around {{property.getCurrentNetIncome() | currency:'GBP':true}} each month.
+</p>
+<p *ngIf="property.baseRate < 15">
+  <span *ngIf="property.baseRate < 10">If interest rates were to rise to 10% (<a href="http://www.bankofengland.co.uk/statistics/Documents/articles/2015/6jul.pdf" target="_blank">similar to rates around 1980</a>), then the mortgage would cost {{property.getMonthlyCost(10) | currency:'GBP':true}} each month, {{property.getMonthlyCost(10) - property.getCurrentMonthlyCost() | currency:'GBP':true}} more that your current repayments. If rates were this high, your monthly income will be nearer to {{property.getNetIncome(10) | currency:'GBP':true}}.<br/></span>
+  <span>If interest rates were to rise to 15% (<a href="http://www.bankofengland.co.uk/statistics/Documents/articles/2015/6jul.pdf" target="_blank">similar to rates around 1995</a>), then the mortgage would cost {{property.getMonthlyCost(15) | currency:'GBP':true}} each month, {{property.getMonthlyCost(15) - property.getCurrentMonthlyCost() | currency:'GBP':true}} more that your current repayments. If rates were this high, your monthly income will be nearer to {{property.getNetIncome(15) | currency:'GBP':true}}.</span>
+</p>

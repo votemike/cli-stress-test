@@ -1,0 +1,9 @@
+<h2>Summary</h2>
+<p>
+  Your current monthly payments are around {{getPropertyCurrentTotal() | currency:'GBP':true}}. This will increase to around {{getPropertyFullTotal() | currency:'GBP':true}} (<span class="text-warning">+{{getPropertyFullTotal() - getPropertyCurrentTotal() | currency:'GBP':true}}</span>) once any/all teaser rates have expired.<br/>
+  Your monthly net income is around {{getPropertyCurrentIncome() | currency:'GBP':true}}. This will change by {{getPropertyProperIncome() - getPropertyCurrentIncome() | currency:'GBP':true}} to around {{getPropertyProperIncome() | currency:'GBP':true}} once any/all teaser rates have expired.
+</p>
+<p>
+  <span>If interest rates were to rise to 10% (<a href="http://www.bankofengland.co.uk/statistics/Documents/articles/2015/6jul.pdf" target="_blank">similar to rates around 1980</a>), then the mortgages would total {{getPropertyTotal(10) | currency:'GBP':true}} each month, {{getPropertyTotal(10) - getPropertyCurrentTotal() | currency:'GBP':true}} more that your current repayments. If rates were this high, your monthly income will be nearer to {{getNetIncomeTotal(10) | currency:'GBP':true}}.<br/></span>
+  <span>If interest rates were to rise to 15% (<a href="http://www.bankofengland.co.uk/statistics/Documents/articles/2015/6jul.pdf" target="_blank">similar to rates around 1985</a>), then the mortgages would total {{getPropertyTotal(15) | currency:'GBP':true}} each month, {{getPropertyTotal(15) - getPropertyCurrentTotal() | currency:'GBP':true}} more that your current repayments. If rates were this high, your monthly income will be nearer to {{getNetIncomeTotal(15) | currency:'GBP':true}}.</span>
+</p>

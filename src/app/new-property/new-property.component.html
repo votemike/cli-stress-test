@@ -1,0 +1,41 @@
+<form (ngSubmit)="onSubmit()" #newPropertyForm="ngForm" class="form-inline">
+  <div class="row">
+    <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-2">
+      <input [(ngModel)]="property.name" name="name" class="form-control" placeholder="Value" required>
+    </div>
+    <div class="form-group interest-wrapper col-xs-12 col-sm-6 col-md-4 col-lg-2">
+      <label for="interestOnly">Interest only
+        <input [(ngModel)]="property.interestOnly" name="interestOnly" type="checkbox" id="interestOnly">
+      </label>
+    </div>
+  </div>
+  <div class="row top-buffer">
+    <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-2">
+      <input [(ngModel)]="property.mortgage" name="mortgage" class="form-control" type="number"
+             placeholder="Outstanding mortgage" step="any" min="0" required>
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-2">
+      <input [(ngModel)]="property.baseRate" name="baseRate" type="number" class="form-control" placeholder="Base rate"
+             step="any" required>
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-2" *ngIf="!property.interestOnly">
+      <input [(ngModel)]="property.monthsLeft" name="monthsLeft" type="number" class="form-control"
+             placeholder="Months left" min="0" required>
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-2">
+      <input [(ngModel)]="property.teaserRate" name="teaserRate" type="number" class="form-control"
+             placeholder="Teaser rate" step="any">
+    </div>
+  </div>
+  <div class="row top-buffer">
+    <div class="form-group col-xs-12">
+      <input [(ngModel)]="property.income" name="income" class="form-control" placeholder="Income" id="income" required>
+      <label for="income">Monthly Net Income after fees, maintainence and taxes but before mortgage payments</label>
+    </div>
+  </div>
+  <div class="row top-buffer">
+    <div class="col-xs-12 col-lg-1">
+      <button class="btn btn-default" [disabled]="!newPropertyForm.form.valid">Add</button>
+    </div>
+  </div>
+</form>

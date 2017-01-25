@@ -1,0 +1,28 @@
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+label {
+  margin: 0;
+}
+
+.form-inline {
+  margin-bottom: 10px;
+  .ng-valid[required], .ng-valid.required {
+    border-left: 5px solid #42A948; /* green */
+  }
+  .ng-invalid:not(form) {
+    border-left: 5px solid #a94442; /* red */
+  }
+  @media (min-width: 768px) {
+    .top-buffer {
+      margin-top: 10px;
+    }
+    .interest-wrapper {
+      height: 34px;
+      padding: 7px 15px;
+    }
+  }
+}

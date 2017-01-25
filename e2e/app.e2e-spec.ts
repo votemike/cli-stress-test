@@ -7,8 +7,9 @@ describe('stress-test App', function() {
     page = new StressTestPage();
   });
 
-  it('should display message saying app works', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
-  });
+  // it('should display title saying Add a property', () => {
+  //   page.navigateTo();
+  //   expect(page.getParagraphText())
+  //     .toEqual('This stress test is provided as a rough guide only. You should not base any decisions solely on it.');
+  // });
 });
