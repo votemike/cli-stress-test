@@ -1,0 +1,20 @@
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Current Monthly</th>
+    <th>Full Monthly</th>
+    <th class="text-warning">Difference Monthly</th>
+  </tr>
+  <tr *ngFor="let property of properties">
+    <td>{{property.name}}</td>
+    <td>{{property.getCurrentMonthlyCost() | currency:'GBP':true}}</td>
+    <td>{{property.getFullMonthlyCost() | currency:'GBP':true}}</td>
+    <td  class="text-warning">{{property.getFullMonthlyCost() - property.getCurrentMonthlyCost() | currency:'GBP':true}}</td>
+  </tr>
+  <tr>
+    <th>Total</th>
+    <td>{{getPropertyCurrentTotal() | currency:'GBP':true}}</td>
+    <td>{{getPropertyFullTotal() | currency:'GBP':true}}</td>
+    <td class="text-warning">{{getPropertyFullTotal() - getPropertyCurrentTotal() | currency:'GBP':true}}</td>
+  </tr>
+</table>

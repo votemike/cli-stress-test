@@ -11,26 +11,11 @@ import {PropertyService} from './property.service';
 export class AppComponent implements OnInit {
 
   properties: Property[];
+
   constructor(private propertyService: PropertyService) {
   }
 
   ngOnInit(): void {
     this.properties = this.propertyService.getProperties();
-  }
-
-  getPropertyCurrentTotal(): number {
-    let teaserTotal = 0;
-    this.properties.forEach(function (property) {
-      teaserTotal += property.getCurrentMonthlyCost();
-    });
-    return teaserTotal;
-  }
-
-  getPropertyFullTotal(): number {
-    let total = 0;
-    this.properties.forEach(function (property) {
-      total += property.getFullMonthlyCost();
-    });
-    return total;
   }
 }

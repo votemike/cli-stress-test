@@ -5,13 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { NewPropertyComponent } from './new-property/new-property.component';
-import { PropertyComponent } from './property/property.component';
+import { PropertyTableComponent } from './property-table/property-table.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    PropertyTableComponent,
     NewPropertyComponent,
-    PropertyComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
