@@ -1,5 +1,5 @@
-import {Injectable} from "@angular/core";
-import {Property} from "./property";
+import {Injectable} from '@angular/core';
+import {Property} from './property';
 
 const PROPERTIES: Property[] = [];
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Property} from "./property";
-import {PropertyService} from "./property.service";
+import {Property} from './property';
+import {PropertyService} from './property.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +9,10 @@ import {PropertyService} from "./property.service";
   providers: [PropertyService],
 })
 export class AppComponent implements OnInit {
-  constructor(private propertyService: PropertyService) {
-  }
 
   properties: Property[];
+  constructor(private propertyService: PropertyService) {
+  }
 
   ngOnInit(): void {
     this.properties = this.propertyService.getProperties();

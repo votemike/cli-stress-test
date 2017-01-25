@@ -1,10 +1,5 @@
-import {
-  describe,
-  ddescribe,
-  expect,
-  iit,
-  it
-} from '@angular/core/testing';
+/* tslint:disable:no-unused-variable */
+
 import {Property} from './property';
 
 describe('Property', () => {
