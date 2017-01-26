@@ -32,5 +32,5 @@ To get more help on the `angular-cli` use `ng help` or go check out the [Angular
 
 ## TODO
 Convert to SASS  
-Make service more AJAXy  
 Write tests  
+Sort Travis

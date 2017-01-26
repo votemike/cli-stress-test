@@ -10,12 +10,11 @@ import {PropertyService} from './property.service';
 })
 export class AppComponent implements OnInit {
 
-  properties: Property[];
+  properties: Property[] = [];
 
-  constructor(private propertyService: PropertyService) {
-  }
+  constructor(private propertyService: PropertyService) {}
 
   ngOnInit(): void {
-    this.properties = this.propertyService.getProperties();
+    this.propertyService.getProperties().then(properties => this.properties = properties);
   }
 }

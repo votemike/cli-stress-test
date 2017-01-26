@@ -5,11 +5,12 @@ const PROPERTIES: Property[] = [];
 
 @Injectable()
 export class PropertyService {
-    addProperty(property: Property) {
-        PROPERTIES.push(property);
+    addProperty(property: Property): Promise<void> {
+      PROPERTIES.push(property);
+      return Promise.resolve();
     }
 
-    getProperties(): Property[] {
-        return PROPERTIES;
+    getProperties(): Promise<Property[]> {
+      return Promise.resolve(PROPERTIES);
     }
 }
