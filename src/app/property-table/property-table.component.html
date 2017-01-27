@@ -4,24 +4,38 @@
     <th>Current Monthly</th>
     <th>Full Monthly</th>
     <th>
-      <a href="http://www.bankofengland.co.uk/statistics/Documents/articles/2015/6jul.pdf" target="_blank" title="Circa 1980">10% Interest</a>
+      <a href="http://www.bankofengland.co.uk/statistics/Documents/articles/2015/6jul.pdf" target="_blank"
+         title="Circa 1980">10% Interest</a>
     </th>
     <th>
-      <a href="http://www.bankofengland.co.uk/statistics/Documents/articles/2015/6jul.pdf" target="_blank" title="Circa 1995">15% Interest</a>
+      <a href="http://www.bankofengland.co.uk/statistics/Documents/articles/2015/6jul.pdf" target="_blank"
+         title="Circa 1995">15% Interest</a>
     </th>
   </tr>
   <tr *ngFor="let property of properties">
     <td>{{property.name}}</td>
     <td>{{property.getCurrentMonthlyCost() | currency:'GBP':true}}</td>
-    <td>{{property.getFullMonthlyCost() | currency:'GBP':true}} (<span class="text-warning">+{{property.getFullMonthlyCost() - property.getCurrentMonthlyCost() | currency:'GBP':true}}</span>)</td>
-    <td>{{property.getMonthlyCost(10) | currency:'GBP':true}} (<span class="text-warning">+{{property.getMonthlyCost(10) - property.getCurrentMonthlyCost() | currency:'GBP':true}}</span>)</td>
-    <td>{{property.getMonthlyCost(15) | currency:'GBP':true}} (<span class="text-warning">+{{property.getMonthlyCost(15) - property.getCurrentMonthlyCost() | currency:'GBP':true}}</span>)</td>
+    <td>
+      {{property.getFullMonthlyCost() | currency:'GBP':true}} (<span class="text-warning">+{{property.getFullMonthlyCost() - property.getCurrentMonthlyCost() | currency:'GBP':true}}</span>)
+    </td>
+    <td>
+      {{property.getMonthlyCost(10) | currency:'GBP':true}} (<span class="text-warning">+{{property.getMonthlyCost(10) - property.getCurrentMonthlyCost() | currency:'GBP':true}}</span>)
+    </td>
+    <td>
+      {{property.getMonthlyCost(15) | currency:'GBP':true}} (<span class="text-warning">+{{property.getMonthlyCost(15) - property.getCurrentMonthlyCost() | currency:'GBP':true}}</span>)
+    </td>
   </tr>
   <tr>
     <th>Total</th>
     <td>{{getPropertyCurrentTotal() | currency:'GBP':true}}</td>
-    <td>{{getPropertyFullTotal() | currency:'GBP':true}} (<span class="text-warning">+{{getPropertyFullTotal() - getPropertyCurrentTotal() | currency:'GBP':true}}</span>)</td>
-    <td>{{getPropertyTotal(10) | currency:'GBP':true}} (<span class="text-warning">+{{getPropertyTotal(10) - getPropertyCurrentTotal() | currency:'GBP':true}}</span>)</td>
-    <td>{{getPropertyTotal(15) | currency:'GBP':true}} (<span class="text-warning">+{{getPropertyTotal(15) - getPropertyCurrentTotal() | currency:'GBP':true}}</span>)</td>
+    <td>
+      {{getPropertyFullTotal() | currency:'GBP':true}} (<span class="text-warning">+{{getPropertyFullTotal() - getPropertyCurrentTotal() | currency:'GBP':true}}</span>)
+    </td>
+    <td>
+      {{getPropertyTotal(10) | currency:'GBP':true}} (<span class="text-warning">+{{getPropertyTotal(10) - getPropertyCurrentTotal() | currency:'GBP':true}}</span>)
+    </td>
+    <td>
+      {{getPropertyTotal(15) | currency:'GBP':true}} (<span class="text-warning">+{{getPropertyTotal(15) - getPropertyCurrentTotal() | currency:'GBP':true}}</span>)
+    </td>
   </tr>
 </table>

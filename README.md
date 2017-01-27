@@ -35,4 +35,4 @@ Convert to SASS
 Write tests  
 Sort Travis  
 Change the '+' in the table to a '-' if the rate is less  
-Add net rental amount in to calculations, after tax and maintainence
+Add net rental amount in to calculations, after tax and maintenance
