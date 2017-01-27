@@ -26,11 +26,8 @@ export class Property {
         return this.getMonthlyCost(this.baseRate);
     }
 
-    private getMonthlyCost(rate: number): number {
+    getMonthlyCost(rate: number): number {
         const monthlyInterestRate = rate / 12 / 100;
-        if (this.interestOnly) {
-            return +(this.mortgage * monthlyInterestRate).toFixed(2);
-        }
         if (this.interestOnly) {
             return +(this.mortgage * monthlyInterestRate).toFixed(2);
         }

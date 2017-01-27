@@ -25,4 +25,12 @@ export class PropertyTableComponent {
     });
     return total;
   }
+
+  getPropertyTotal(rate: number): number {
+    let total = 0;
+    this.properties.forEach(function (property) {
+      total += property.getMonthlyCost(rate);
+    });
+    return total;
+  }
 }

@@ -33,4 +33,6 @@ To get more help on the `angular-cli` use `ng help` or go check out the [Angular
 ## TODO
 Convert to SASS  
 Write tests  
-Sort Travis
+Sort Travis  
+Change the '+' in the table to a '-' if the rate is less  
+Add net rental amount in to calculations, after tax and maintainence
