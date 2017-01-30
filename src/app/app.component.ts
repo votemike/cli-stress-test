@@ -10,6 +10,7 @@ import {PropertyService} from './property.service';
 })
 export class AppComponent implements OnInit {
 
+  title: string = 'Property Stress Test';
   properties: Property[] = [];
 
   constructor(private propertyService: PropertyService) {}

@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { NewPropertyComponent } from './new-property/new-property.component';
 import { PropertyTableComponent } from './property-table/property-table.component';
+import {PropertyService} from "./property.service";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { PropertyTableComponent } from './property-table/property-table.componen
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [PropertyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

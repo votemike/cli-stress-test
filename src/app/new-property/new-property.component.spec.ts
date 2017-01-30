@@ -2,8 +2,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { NewPropertyComponent } from './new-property.component';
+import {PropertyService} from "../property.service";
 
 describe('NewPropertyComponent', () => {
   let component: NewPropertyComponent;
@@ -11,7 +13,9 @@ describe('NewPropertyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewPropertyComponent ]
+      declarations: [ NewPropertyComponent ],
+      imports: [FormsModule],
+      providers: [PropertyService]
     })
     .compileComponents();
   }));
