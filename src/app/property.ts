@@ -9,6 +9,7 @@ export class Property {
         public interestOnly: boolean,
         public income: number,
         public teaserRate?: number,
+        public teaserRateMonthsLeft?: number,
     ) {  }
 
     // Rental income

@@ -22,9 +22,15 @@
       <input [(ngModel)]="property.monthsLeft" name="monthsLeft" type="number" class="form-control"
              placeholder="Months left" min="0" required>
     </div>
+  </div>
+  <div class="row top-buffer">
     <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-2">
       <input [(ngModel)]="property.teaserRate" name="teaserRate" type="number" class="form-control"
              placeholder="Teaser rate" step="any">
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-2">
+      <input [(ngModel)]="property.teaserRateMonthsLeft" name="teaserRateMonthsLeft" type="number" class="form-control"
+             placeholder="T.r. months left" min="0" [required]='property.teaserRate'>
     </div>
   </div>
   <div class="row top-buffer">

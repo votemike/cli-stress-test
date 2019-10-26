@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Property} from './property';
 import {PropertyService} from './property.service';
+// import * as Chart from 'chart';
+// import 'chart.js'
 
 @Component({
   selector: 'app-root',
@@ -18,5 +20,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.propertyService.getProperties().then(properties => this.properties = properties);
+    // var myChart = new Chart();
+    // console.log(myChart);
   }
 }
